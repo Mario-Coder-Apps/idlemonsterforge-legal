@@ -22,7 +22,7 @@
 <main class="legal-doc">
   <span class="tag">Privacy Policy</span>
   <h1>Privacy Policy</h1>
-  <p class="effective-date">Effective date: September 7, 2026</p>
+  <p class="effective-date">Effective date: October 3, 2026</p>
 
   <p>
     This Privacy Policy explains what data the mobile game <strong>Idle Monster Forge</strong>
@@ -30,7 +30,8 @@
     Idle Monster Forge is developed by Mario Haesler, an independent developer based in Germany
     (see <a href="impressum.html">Imprint</a> for full contact details). We built Idle Monster Forge to
     be playable without creating an account — the data described below is limited to what is
-    needed to run leaderboards/clans, process purchases, show ads, and keep the game stable.
+    needed to process purchases, show ads, deliver app updates, keep in-game timers fair and the game
+    stable, and, once they launch, to run leaderboards and clans.
   </p>
 
   <h2>1. Data We Collect</h2>
@@ -43,6 +44,12 @@
     prestige count, raids completed) — in our backend, provided by <strong>Supabase</strong>.
     This ID is not linked to your real name, email address, or any account with us; we have no
     login system and do not ask for personal contact information to play.
+  </p>
+  <p>
+    In the current version of the App, leaderboards and clans are not yet available; until they
+    launch, no player data is uploaded to Supabase. The App does contact Supabase to read the
+    current server time, which keeps in-game timers fair. This request only involves technical
+    connection data such as your IP address and does not include your player ID or any gameplay data.
   </p>
 
   <h3>1.2 Purchase Data</h3>
@@ -88,20 +95,30 @@
     sent to or processed by our servers.
   </p>
 
+  <h3>1.7 App Updates</h3>
+  <p>
+    The App receives bug fixes and content updates through <strong>Expo</strong> (EAS Update). When
+    the App starts, it contacts Expo's update servers to check for a newer version. This transmits
+    technical data such as your IP address, the app version, the device platform and a random
+    installation ID created by the update system, which is used to deliver updates reliably and in
+    stages. No gameplay data, player ID or advertising identifier is shared with Expo.
+  </p>
+
   <h2>2. Third-Party Service Providers</h2>
   <p>We rely on the following processors to run the App. Each has its own privacy policy governing how they handle data on our behalf:</p>
   <table>
     <tr><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr>
-    <tr><td>Supabase Inc.</td><td>Leaderboards, clans, anonymous player data storage</td><td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td></tr>
+    <tr><td>Supabase Inc.</td><td>Server time check; leaderboards, clans and anonymous player data storage (once these features launch)</td><td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td></tr>
     <tr><td>RevenueCat, Inc.</td><td>In-app purchase &amp; subscription processing</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></td></tr>
     <tr><td>Google LLC (AdMob)</td><td>Rewarded video advertising</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
     <tr><td>Functional Software, Inc. (Sentry)</td><td>Crash reporting &amp; diagnostics</td><td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></td></tr>
     <tr><td>GameAnalytics ApS</td><td>Gameplay &amp; monetization analytics</td><td><a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener">gameanalytics.com/privacy</a></td></tr>
+    <tr><td>650 Industries, Inc. (Expo)</td><td>App update delivery</td><td><a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a></td></tr>
   </table>
 
   <h2>3. How We Use Your Data</h2>
   <ul>
-    <li>To operate core features: leaderboards, clans, purchases, and offline-progress rewards.</li>
+    <li>To operate core features: purchases, offline-progress rewards, app updates and fair in-game timers, and, once available, leaderboards and clans.</li>
     <li>To show and measure optional rewarded ads.</li>
     <li>To diagnose crashes and fix bugs.</li>
     <li>To understand engagement and improve game balance and content over time.</li>
