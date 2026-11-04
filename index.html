@@ -23,6 +23,12 @@
   <h1>Idle Monster Forge</h1>
   <p class="tagline">Your monsters dig gold for you, even while you're away. Place them wisely, raid human towns, forge their gear, and transform them forever with a Dark Ritual.</p>
   <a class="store-button" href="https://apps.apple.com/app/idle-monster-forge/id6797419820">Free on the App Store</a>
+  <div class="iab" id="iab" hidden>
+    <p><strong>Blank page instead of the App Store?</strong> This app's built-in browser can't open the App Store.
+      Tap <strong>&bull;&bull;&bull;</strong> at the top and choose <strong>Open in external browser</strong> - or use a button below.</p>
+    <a class="iab-button" href="x-safari-https://apps.apple.com/app/idle-monster-forge/id6797419820">Open in Safari</a>
+    <button class="iab-button" type="button" id="copy-link">Copy App Store link</button>
+  </div>
 </div>
 
 <main>
@@ -47,6 +53,27 @@
   &copy; 2026 Mario Haesler. All rights reserved. &middot;
   <a href="mailto:mariohaesler@protonmail.com">Contact</a>
 </footer>
+
+<script>
+  // Instagram, Facebook and TikTok open links in their own in-app browser, which shows a blank page for the App Store
+  // (it does not hand apps.apple.com over to the App Store app). There, offer Safari and the link to copy.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var inApp = /Instagram|FBAN|FBAV|FB_IAB|TikTok|musical_ly|BytedanceWebview|Bytedance|Threads/i.test(ua);
+    if (!inApp && !/[?&]iab\b/.test(location.search)) return;
+    document.getElementById("iab").hidden = false;
+    var link = "https://apps.apple.com/app/idle-monster-forge/id6797419820";
+    var btn = document.getElementById("copy-link");
+    btn.addEventListener("click", function () {
+      var done = function () { btn.textContent = "Link copied - paste it into Safari"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(done, function () { prompt("Copy this link:", link); });
+      } else {
+        prompt("Copy this link:", link);
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
