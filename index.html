@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Idle Monster Forge</title>
 <meta name="description" content="Idle Monster Forge is an idle monster-collecting game. Official site for legal documents: Privacy Policy, Terms of Service, and Imprint.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -67,7 +67,9 @@
     var inApp = /Instagram|FBAN|FBAV|FB_IAB|TikTok|musical_ly|BytedanceWebview|Bytedance|Threads/i.test(ua);
     if (!inApp && !/[?&]iab\b/.test(location.search)) return;
     document.getElementById("iab").hidden = false;
-    document.getElementById("store").hidden = true;    // it only shows a blank page in here (tested 2026-11-04)
+    var store = document.getElementById("store");      // it only shows a blank page in here (tested 2026-11-04)
+    store.hidden = true;
+    store.style.display = "none";                      // also under a stylesheet cached from before
     var link = "https://apps.apple.com/app/idle-monster-forge/id6797419820";
     var btn = document.getElementById("copy-link");
     btn.addEventListener("click", function () {
