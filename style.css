@@ -203,6 +203,20 @@ footer.site-footer a:hover { color: var(--gold-light); }
 }
 .iab[hidden] { display: none; }
 .iab p { margin: 0 0 12px; }
+.store-button[hidden] { display: none; }
+.iab { position: relative; text-align: left; }
+.iab-title { font-weight: 700; font-size: 1.1rem; color: var(--gold-light); }
+.iab ol { margin: 0 0 14px; padding-left: 22px; line-height: 1.7; }
+.iab-arrow {
+  position: fixed;
+  top: 6px;
+  right: 14px;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold-light);
+  animation: iab-nudge 1.2s ease-in-out infinite;
+}
+@keyframes iab-nudge { 50% { transform: translate(4px, -4px); } }
 .iab-button {
   display: block;
   width: 100%;
