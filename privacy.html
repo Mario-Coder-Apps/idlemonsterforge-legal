@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Idle Monster Forge</title>
-<meta name="description" content="Privacy Policy for the Idle Monster Forge mobile game: what data is collected, why, and how to exercise your rights.">
+<title>Idle Monster Forge: Privacy Policy</title>
+<meta name="description" content="Privacy Policy for the Idle Monster Forge iPhone game and this website: what data is collected, why, and how to exercise your rights.">
+<link rel="alternate" hreflang="en" href="https://mario-coder-apps.github.io/idlemonsterforge-legal/privacy.html">
+<link rel="alternate" hreflang="de" href="https://mario-coder-apps.github.io/idlemonsterforge-legal/de/privacy.html">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--
+  KEEP THIS PAGE TRUE TO THE APP (the Godot game, monster_forge_godot). As of 2026-11-16: no account, progress only on
+  the device; purchases through Apple's StoreKit 2 (game/services/store_apple.gd: the transaction ids kept in the save,
+  product + price + currency as a GameAnalytics business event); rewarded videos through AdMob with Google's UMP and
+  Apple's ATT, one video preloaded (ads_admob.gd); crash reports through Sentry, DE region, send_default_pii = false
+  (crash_sentry.gd; the events carry no IP, only Sentry's geo); GameAnalytics through the REST client (analytics.gd:
+  random player id, session, iOS + app version; no IDFA / IDFV / device model) and its host's Date header as the clock
+  (core/server_clock.gd); local notifications (notifier.gd). When a service or what it sends changes, change both
+  languages (this page and de/privacy.html) and the date.
+-->
 
 <header class="site-header">
   <a href="index.html" class="brand">Idle Monster Forge</a>
@@ -17,142 +29,183 @@
     <a href="terms.html">Terms of Service</a>
     <a href="impressum.html">Imprint</a>
   </nav>
+  <nav class="lang-switch" aria-label="Language">
+    <a href="privacy.html" hreflang="en" lang="en" aria-current="true">EN</a>
+    <a href="de/privacy.html" hreflang="de" lang="de">DE</a>
+  </nav>
 </header>
 
 <main class="legal-doc">
   <span class="tag">Privacy Policy</span>
   <h1>Privacy Policy</h1>
-  <p class="effective-date">Effective date: October 3, 2026</p>
+  <p class="effective-date">Effective date: November 16, 2026</p>
 
   <p>
-    This Privacy Policy explains what data the mobile game <strong>Idle Monster Forge</strong>
-    ("the App", "we", "us") collects, how it is used, and the choices and rights you have.
-    Idle Monster Forge is developed by Mario Haesler, an independent developer based in Germany
-    (see <a href="impressum.html">Imprint</a> for full contact details). We built Idle Monster Forge to
-    be playable without creating an account — the data described below is limited to what is
-    needed to process purchases, show ads, deliver app updates, keep in-game timers fair and the game
-    stable, and, once they launch, to run leaderboards and clans.
+    This Privacy Policy explains what data the iPhone game <strong>Idle Monster Forge</strong>
+    ("the App", "we", "us") collects, how it is used, and the choices and rights you have. It also
+    covers this website. Idle Monster Forge is developed by Mario Haesler, an independent developer
+    based in Germany (see <a href="impressum.html">Imprint</a> for full contact details). We built
+    Idle Monster Forge to be playable without an account, and your progress stays on your device. The
+    data described below is limited to what is needed to process purchases, show optional ads, keep
+    in-game timers fair, keep the game stable and improve it.
   </p>
 
   <h2>1. Data We Collect</h2>
 
-  <h3>1.1 Anonymous Player Data</h3>
+  <h3>1.1 Data That Stays on Your Device</h3>
   <p>
-    To power leaderboards, clans, and cross-device features, the App generates a random,
-    anonymous player ID on first launch and stores it — together with your in-game display
-    name (auto-generated, editable by you), league/rank, and gameplay statistics (gold earned,
-    prestige count, raids completed) — in our backend, provided by <strong>Supabase</strong>.
-    This ID is not linked to your real name, email address, or any account with us; we have no
-    login system and do not ask for personal contact information to play.
+    Your save game (monsters, progress, settings, the purchases you own and the identifiers of
+    completed purchases) is stored only on your device, in the App's own storage. It is part of your
+    iPhone backup (iCloud or computer), which Apple manages according to your settings. We have no
+    access to it. On first launch the App creates a random player ID, which you can see in the App's
+    Settings; it is used for the game statistics (section 1.5) and in support e-mails (section 1.8).
+    If you played the
+    earlier version of Idle Monster Forge on the same iPhone, the App took over your progress and
+    player ID from that version's storage on the device once; nothing left the device for this.
   </p>
   <p>
-    In the current version of the App, leaderboards and clans are not yet available; until they
-    launch, no player data is uploaded to Supabase. The App does contact Supabase to read the
-    current server time, which keeps in-game timers fair. This request only involves technical
-    connection data such as your IP address and does not include your player ID or any gameplay data.
+    Reminder notifications (for example "Raid complete!" or "Your treasury is full!") are planned by
+    the App and delivered by iOS on your device; no server is involved. The App asks for your
+    permission before it shows them, and you can switch them off in Settings &rsaquo; Push
+    Notifications or in your iPhone's settings. To start over, use Settings &rsaquo; Reset Progress
+    (your purchases are kept). To delete everything, delete the App.
   </p>
 
   <h3>1.2 Purchase Data</h3>
   <p>
-    In-app purchases (virtual currency packs, cosmetics, Battle Pass, subscriptions) are
-    processed by <strong>RevenueCat</strong>, which receives your purchase/transaction history
-    from Apple's App Store or Google Play, tied to a purchase-specific identifier, in order to
-    deliver the content you bought and to support "Restore Purchases". We do not receive or
-    store your payment card details — these are handled entirely by Apple/Google.
+    In-app purchases (voidshard packs, No Ads, the Production Boosts, the Dark Alchemist Passes and
+    the Hero Pass) are processed by Apple through the App Store. We never receive your payment or
+    account details. The App only receives Apple's signed confirmation of a purchase (the product, an
+    identifier of the transaction, the price and the currency) and keeps the transaction identifier
+    on your device, so that every purchase is credited exactly once. "Restore Purchases" asks Apple
+    for the purchases you own. Product, price and currency are also sent to GameAnalytics as a purchase
+    event (section 1.5). Apple's privacy policy applies:
+    <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.
   </p>
 
   <h3>1.3 Advertising Data</h3>
   <p>
-    Idle Monster Forge offers optional rewarded video ads (e.g. to double offline rewards) via
-    <strong>Google AdMob</strong>. Showing and measuring these ads involves processing an
-    advertising identifier (IDFA on iOS / GAID on Android), your IP address, and general ad
-    interaction data. On iOS, this only happens after you grant App Tracking Transparency (ATT)
-    permission; where legally required (e.g. in the EEA/UK), we first request your consent via
-    Google's User Messaging Platform (UMP) before any personalized ad request is made. You can
-    change or withdraw ad consent at any time in the App's Settings.
+    Idle Monster Forge offers optional rewarded videos (for example to multiply your offline gold)
+    through <strong>Google AdMob</strong> (Google Ireland Limited, Gordon House, Barrow Street,
+    Dublin 4, Ireland). When the App starts, it runs Google's consent check (User Messaging Platform,
+    UMP). Where the law requires consent, for example in the EEA and the UK, it shows Google's consent
+    form (Art. 6(1)(a) GDPR). AdMob starts so that the form can be shown, but the App loads videos only
+    after your choice. From then on the App keeps one video loaded in advance, so that it is ready
+    when you want one. Google processes device information, your IP address and an approximate location derived from it, even if you never watch
+    a video, as well as your interactions with the ads. Google uses the advertising identifier of
+    your device (IDFA) only if you allow it in Apple's tracking prompt. You can change or withdraw your
+    ad consent at any time in Settings &rsaquo; Privacy Options (shown where the consent form
+    applies). Google's privacy policy:
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
   </p>
 
-  <h3>1.4 Crash & Diagnostic Data</h3>
+  <h3>1.4 Crash &amp; Diagnostic Data</h3>
   <p>
-    We use <strong>Sentry</strong> to automatically collect crash reports and error logs
-    (device model, OS version, app version, stack traces, and IP address) so we can find and fix
-    bugs. This data is used solely for stability/debugging purposes.
+    If the App crashes, hangs or runs into an error, it sends a report to <strong>Sentry</strong>
+    (Functional Software, Inc.; data stored in the EU). A report contains the device model and its
+    technical state at that moment (for example free memory, battery level and screen size), the iOS
+    and App version, your device's language and time zone settings, the error and where in the
+    program it happened, the App's last technical messages, and a random identifier that Sentry
+    creates on your device. Sentry derives an approximate location (country and city) from your IP
+    address; the IP address itself is not stored with the report. The report contains no name,
+    contact details or advertising identifier. We use these reports solely to find and fix bugs.
   </p>
 
   <h3>1.5 Gameplay Analytics</h3>
   <p>
-    We use <strong>GameAnalytics</strong> to understand how the game is played and to improve
-    it — this includes your anonymous player ID, device model, OS version, session length,
-    in-game progression and economy events (e.g. which features you use, virtual-currency
-    flow), monetization events, and an approximate location derived from your IP address
-    (country level only — we do not receive or store precise GPS location).
+    We use <strong>GameAnalytics</strong> (GameAnalytics ApS, Denmark) to understand how the game is
+    played and to improve its balance and content. The App sends game events: the start and length of
+    a session, tutorial steps, monsters unlocked, Dark Rituals, raids, crafted gear, the Dark Feast,
+    rewarded videos (shown, failed or rewarded, with the place in the game), and purchases (product,
+    price and currency) as well as purchases that Apple takes back. Each event carries your random
+    player ID, a session number, the iOS and App version and the platform (iPhone). The App does not
+    send the advertising identifier (IDFA), the identifier for vendors (IDFV), your device model or
+    your name. GameAnalytics receives your IP address with each request and derives your country from
+    it; we do not receive or store your precise location. We use the statistics only to improve the
+    game, not for advertising.
   </p>
 
-  <h3>1.6 Data That Stays on Your Device</h3>
+  <h3>1.6 Fair In-Game Timers</h3>
   <p>
-    Your save game (monsters, progress, settings) is stored locally on your device. Reminder
-    notifications (e.g. "your offline gold is ready") are scheduled entirely on-device and never
-    sent to or processed by our servers.
+    Offline gold, raids and daily rewards depend on the time. So that changing the device's clock
+    brings no advantage, the App reads the current time from a GameAnalytics server when it starts and
+    when you return to it: it sends a short request and only reads the date and time of the answer.
+    This request contains no player ID and no game data; like every connection, it shows the server
+    your IP address. The App keeps only the difference between your device's clock and the server's
+    time, on your device.
   </p>
 
-  <h3>1.7 App Updates</h3>
+  <h3>1.7 Ratings</h3>
   <p>
-    The App receives bug fixes and content updates through <strong>Expo</strong> (EAS Update). When
-    the App starts, it contacts Expo's update servers to check for a newer version. This transmits
-    technical data such as your IP address, the app version, the device platform and a random
-    installation ID created by the update system, which is used to deliver updates reliably and in
-    stages. No gameplay data, player ID or advertising identifier is shared with Expo.
+    The App may show Apple's rating dialog. You rate directly with Apple; we only see the ratings that
+    are published in the App Store.
+  </p>
+
+  <h3>1.8 E-mails to Us</h3>
+  <p>
+    If you write to us, for example through Settings &rsaquo; Contact Support, we use your e-mail
+    address and your message to answer you. The e-mail draft from the App already contains your
+    player ID and technical details (App version, platform), so that we can help you; you can remove
+    them before you send it. We delete your e-mails once your request is settled, unless the law
+    requires us to keep them.
+  </p>
+
+  <h3>1.9 This Website</h3>
+  <p>
+    These pages are served by GitHub Pages (GitHub, Inc., a Microsoft company). When you open them,
+    GitHub processes technically necessary data such as your IP address in server logs to deliver and
+    protect the site. Where data is transferred to the USA, GitHub states that it relies on the
+    EU-U.S. Data Privacy Framework and standard contractual clauses. This website sets no cookies,
+    uses no analytics and loads nothing from third parties.
   </p>
 
   <h2>2. Third-Party Service Providers</h2>
-  <p>We rely on the following processors to run the App. Each has its own privacy policy governing how they handle data on our behalf:</p>
+  <p>We rely on the following providers to run the App and this website. Each has its own privacy policy governing how they handle data:</p>
   <table>
     <tr><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr>
-    <tr><td>Supabase Inc.</td><td>Server time check; leaderboards, clans and anonymous player data storage (once these features launch)</td><td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td></tr>
-    <tr><td>RevenueCat, Inc.</td><td>In-app purchase &amp; subscription processing</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></td></tr>
-    <tr><td>Google LLC (AdMob)</td><td>Rewarded video advertising</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+    <tr><td>Apple (App Store)</td><td>In-app purchases and subscriptions; rating dialog</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td></tr>
+    <tr><td>Google (AdMob, User Messaging Platform)</td><td>Rewarded videos and the ad consent form</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
     <tr><td>Functional Software, Inc. (Sentry)</td><td>Crash reporting &amp; diagnostics</td><td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></td></tr>
-    <tr><td>GameAnalytics ApS</td><td>Gameplay &amp; monetization analytics</td><td><a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener">gameanalytics.com/privacy</a></td></tr>
-    <tr><td>650 Industries, Inc. (Expo)</td><td>App update delivery</td><td><a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a></td></tr>
+    <tr><td>GameAnalytics ApS</td><td>Gameplay &amp; purchase analytics; server time for fair timers</td><td><a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener">gameanalytics.com/privacy</a></td></tr>
+    <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Hosting of this website</td><td><a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">docs.github.com</a></td></tr>
   </table>
 
   <h2>3. How We Use Your Data</h2>
   <ul>
-    <li>To operate core features: purchases, offline-progress rewards, app updates and fair in-game timers, and, once available, leaderboards and clans.</li>
-    <li>To show and measure optional rewarded ads.</li>
+    <li>To deliver and restore your purchases.</li>
+    <li>To show optional rewarded videos and give you their rewards.</li>
+    <li>To keep in-game timers fair.</li>
     <li>To diagnose crashes and fix bugs.</li>
     <li>To understand engagement and improve game balance and content over time.</li>
-    <li>To comply with legal obligations (e.g. tax records for purchases).</li>
+    <li>To answer your e-mails.</li>
+    <li>To comply with legal obligations.</li>
   </ul>
   <p>We do not sell your personal data, and we do not use it for purposes unrelated to running and improving Idle Monster Forge.</p>
 
   <h2>4. Legal Basis for Processing (EEA/UK/GDPR)</h2>
   <p>Where the GDPR applies, we rely on:</p>
   <ul>
-    <li><strong>Consent</strong> — for personalized advertising and ATT-gated tracking (Art. 6(1)(a) GDPR); you can withdraw this at any time in Settings.</li>
-    <li><strong>Contract performance</strong> — for processing purchases you make (Art. 6(1)(b) GDPR).</li>
-    <li><strong>Legitimate interest</strong> — for crash diagnostics, non-personalized analytics, and anti-fraud/anti-cheat measures on leaderboards (Art. 6(1)(f) GDPR).</li>
+    <li><strong>Consent</strong> for personalized advertising and for access to your advertising identifier after Apple's tracking prompt (Art. 6(1)(a) GDPR). You can withdraw it at any time in Settings &rsaquo; Privacy Options or in your iPhone's settings.</li>
+    <li><strong>Contract performance</strong> for delivering and restoring the purchases you make (Art. 6(1)(b) GDPR).</li>
+    <li><strong>Legitimate interest</strong> for crash reports, game statistics, the server time check, this website's server logs and answering your e-mails (Art. 6(1)(f) GDPR). Our interest is a stable, fair and well-balanced game.</li>
   </ul>
 
   <h2>5. Data Retention</h2>
   <p>
-    We keep anonymous player data and analytics data for as long as your player ID remains
-    active, and for a reasonable period afterward for backups and fraud prevention. Purchase
-    records are kept as required by tax and accounting law (typically up to 10 years in
-    Germany). Crash reports are retained by Sentry per their standard retention window
-    (typically 90 days) before automatic deletion.
+    Your save game and settings stay on your device until you reset your progress or delete the App.
+    Sentry and GameAnalytics keep crash reports and game statistics according to their own retention
+    rules. E-mails are deleted once your request is settled, unless the law requires us to keep them.
   </p>
 
   <h2>6. Your Rights</h2>
   <p>
     Depending on where you live, you may have the right to access, correct, delete, restrict, or
     export data we hold about you, and to object to or withdraw consent for certain processing.
-    Because Idle Monster Forge has no login/account system, most of what we hold is tied only to an
-    anonymous player ID stored on your device — if you'd like it deleted, contact us at
-    <a href="mailto:mariohaesler@protonmail.com">mariohaesler@protonmail.com</a> with your
-    in-game display name (Settings screen) and we will locate and delete the associated backend
-    records. You also have the right to lodge a complaint with your local data protection
-    authority.
+    Because Idle Monster Forge has no account, the data at our providers is not linked to your name.
+    The game statistics are linked only to the random player ID shown in the App's Settings. To
+    exercise your rights for them, write to us at
+    <a href="mailto:mariohaesler@protonmail.com">mariohaesler@protonmail.com</a> with that player ID.
+    You also have the right to lodge a complaint with your local data protection authority.
   </p>
 
   <h3>6.1 Canada (PIPEDA)</h3>
@@ -180,10 +233,10 @@
   <p>
     If applicable state privacy laws (such as the CCPA) apply to you, you may have the right to
     know what personal information is collected, to request deletion, and to opt out of the
-    "sale" or "sharing" of personal information for cross-context advertising (we do not sell
-    personal data for money; ad-identifier sharing with AdMob for ad delivery may be considered
-    "sharing" under some definitions — you can limit this via the App's ad-consent settings and
-    your device's ad-tracking controls).
+    "sale" or "sharing" of personal information for cross-context advertising. We do not sell
+    personal data for money. Sharing the advertising identifier with AdMob for ad delivery may be
+    considered "sharing" under some definitions; you can limit this via the App's ad consent
+    settings and your device's ad tracking controls.
   </p>
 
   <h2>7. Children's Privacy</h2>
@@ -204,11 +257,14 @@
 
   <h2>9. Advertising &amp; Tracking Consent</h2>
   <p>
-    On first launch (and whenever required by law), Idle Monster Forge shows a consent prompt (Google
-    UMP) before requesting personalized ads, and — on iOS — a separate system App Tracking
-    Transparency prompt before accessing your advertising identifier. If you decline, you will
-    still see ads, but they will be less personalized. You can review or change these choices at
-    any time in the App's Settings, or in your device's system privacy settings.
+    Each time the App starts, it checks with Google whether your consent is required where you are
+    (Google UMP). Where it is and you have not made a choice yet, the App shows Google's consent form
+    before it loads any video. On iOS,
+    Apple's App Tracking Transparency prompt asks you separately before Google may use your
+    advertising identifier. If you decline, you can still watch videos, but the ads will be less
+    personalized. You can review or change these choices at any time in Settings &rsaquo; Privacy
+    Options (where the consent form applies) and in your iPhone's settings (Privacy &amp; Security
+    &rsaquo; Tracking).
   </p>
 
   <h2>10. Changes to This Policy</h2>
@@ -230,7 +286,8 @@
 <footer class="site-footer">
   Idle Monster Forge is developed by Mario Haesler.<br>
   &copy; 2026 Mario Haesler. All rights reserved. &middot;
-  <a href="mailto:mariohaesler@protonmail.com">Contact</a>
+  <a href="mailto:mariohaesler@protonmail.com">Contact</a> &middot;
+  <a href="de/privacy.html" hreflang="de" lang="de">Deutsch</a>
 </footer>
 
 </body>
